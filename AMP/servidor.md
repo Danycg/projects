@@ -64,8 +64,50 @@ sudo ufw status
 Ahora si vemos cual es el estado.
 ![Salida ufw](./img/ufw_status.png)
 
-Para que en el futuro no tengamos problemas con el acceso remoto al equipo vamos a activar el puerto `22 (Open SSH)`
+Para que en el futuro no tengamos problemas con el acceso remoto al equipo vamos a activar el puerto `22 (Open SSH)`, para ello vamos a ejecutar los siguientes comandos y luego veremos el estado.
+```sh
+sudo ufw allow openssh
+```
+La salida ahora sería:nu
+![Ufw completo](./img/ufw_status_full.png)
 
-Ahora, se permite tráfico en el puerto 80 a través del firewall.
+Ahora, se permite tráfico en el puerto `80` a través del firewall.
 
 Puede realizar una verificación rápida para comprobar que todo se haya realizado según lo previsto dirigiéndose a la dirección IP pública de su servidor en su navegador web (consulte la nota de la siguiente sección para saber cuál es su dirección IP pública si no dispone de esta información):
+```sh
+http://your_server_ip
+```
+
+Para ello vamos a ir a AWS y comprobar por una parte la configuración de seguridad de las reglas de entrada y por otra parte ver nuetra **IP pública**.
+
+## Revisar configuración en AWS
+Las reglas de configuración de seguridad de entrada, deben de ser la siguientes:
+#### Reglas de seguridad de entrada
+![Ufw completo](./img/grupo_seg_entrada.png)
+### Ip pública
+![Ufw completo](./img/ip_publica.png)
+
+En este caso la ip pública es: **3.228.8.192**, con lo que si ejecutamos en el navegador de nuestro PC lo siguiente:
+```sh
+http://3.228.8.192
+```
+Nos debe aparecer la página inicial de nuestro servidor.
+
+![Ufw completo](./img/default_page.png)
+
+## Paso 2: Instalar MySQL
+Ahora que dispone de un servidor web funcional, deberá instalar un sistema de base de datos para poder almacenar y gestionar los datos de su sitio. MySQL es un sistema de administración de bases de datos popular que se utiliza en entornos PHP.
+
+Una vez más, utilice `apt` para adquirir e instalar este software:
+
+```sh
+sudo apt install mysql-server
+```
+Cuando se le solicite, confirme la instalación al escribir `Y` y, luego, `ENTER`.
+
+Cuando la instalación se complete, se recomienda ejecutar una secuencia de comandos de seguridad que viene preinstalada en MySQL Con esta secuencia de comandos se eliminarán algunos ajustes predeterminados poco seguros y se bloqueará el acceso a su sistema de base de datos. Inicie la secuencia de comandos interactiva ejecutando lo siguiente:
+```sh
+sudo mysql_secure_installation
+```
+
+
