@@ -109,5 +109,70 @@ Cuando la instalación se complete, se recomienda ejecutar una secuencia de coma
 ```sh
 sudo mysql_secure_installation
 ```
+Se le preguntará si desea configurar el `VALIDATE PASSWORD PLUGIN`.
+
+Elije `Y` para indicar que sí, o cualquier otra cosa para continuar sin la habilitación.
+
+Si responde “sí”, se le solicitará que seleccione un nivel de validación de contraseña. Tenga en cuenta que, si ingresa `2` para indicar el nivel más seguro, recibirá mensajes de error al intentar establecer cualquier contraseña que no contenga números, letras en mayúscula y minúscula, y caracteres especiales, o que se base en palabras comunes del diccionario.
+
+Para el resto de las preguntas, presione `Y` y `ENTER` en cada mensaje. Con esto, se eliminarán algunos usuarios anónimos y la base de datos de prueba, se deshabilitarán las credenciales de inicio de sesión remoto de root y se cargarán estas nuevas reglas para que MySQL aplique de inmediato los cambios que realizó.
+
+Cuando termine, compruebe si puede iniciar sesión en la consola de MySQL al escribir lo siguiente:
+```sh
+sudo mysql
+```
+Esto permitirá establecer conexión con el servidor de MySQL como root user de la base de datos administrativa, lo que se infiere del uso de sudo cuando se ejecuta este comando. Debería ver el siguiente resultado:
+
+![mysql](./img/mysql.png)
+
+Para salir escribir:
+```sh
+mysql> exit;
+```
+## Paso 3: Instalar PHP
+
+Instaló Apache para presentar su contenido y MySQL para almacenar y gestionar sus datos. PHP es el componente de nuestra configuración que procesará el código para mostrar contenido dinámico al usuario final. Además del paquete php, necesitará php-mysql, un módulo PHP que permite que este se comunique con bases de datos basadas en MySQL. También necesitará libapache2-mod-php para habilitar Apache para gestionar archivos PHP. Los paquetes PHP básicos se instalarán automáticamente como dependencias.
+
+Para instalar estos paquetes, ejecute lo siguiente:
+```sh
+sudo apt install php libapache2-mod-php php-mysql php-mcrypt php-cgi php-curl php-json
+```
+
+Una vez que la instalación se complete, podrá ejecutar el siguiente comando para confirmar su versión de PHP:
+```sh
+php -v
+```
+
+
+En este punto, su pila LAMP está plenamente operativa, pero, para poder probar su configuración con una secuencia de comandos PHP, lo mejor es instalar un host virtual de Apache adecuado para almacenar los archivos y las carpetas de su sitio web. Lo haremos en el siguiente paso.
+
+
+### 3.1 – Comprobación de la instalación de PHP
+
+Ahora que has instalado PHP, vamos a comprobar si funciona correctamente creando un archivo de prueba y abriéndolo en el navegador.
+Ahora, ingrese el siguiente comando.
+```sh
+sudo nano /var/www/html/test.php
+```
+
+Este comando abrirá nano editor con un archivo en blanco test.php para su edición. El directorio /var/www/html.
+
+Aquí es donde Apache busca el archivo solicitado en la URL del sitio web de forma predeterminada si no se ha configurado para buscar otro sitio. Consulta la página de documentación de Apache Ubuntu para obtener información sobre su configuración.
+
+Además, necesita privilegios de root para poder escribir en este directorio. Hemos utilizado `sudo` antes de nuestro comando. Ahora ingrese el siguiente texto en el editor abierto:
+```sh
+<?php
+phpinfo();
+?>
+```
+Después de ingresar este texto presione Ctrl + X (o CMD + X si está en Mac), y luego Y, y luego presione ENTER. Esto guardará el archivo y saldrá del editor. Ahora abra la siguiente dirección web en su navegador
+```sh
+http://<your_vps_ip_adress>/test.php
+```
+
+En nuestro caso:
+```sh
+http://3.228.8.192/test.php
+```
 
 
