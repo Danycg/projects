@@ -12,6 +12,7 @@ Instale Apache usando el administrador de paquetes de Ubuntu, apt:
 
 ```sh
 sudo apt update
+sudo apt upgrade
 sudo apt install apache2
 ```
 
@@ -23,4 +24,17 @@ sudo ufw app list
 ```
 
 Verá un resultado como este:
+
+![Salida ufw](./img/ufw.png)
+
+A continuación, explicamos cada uno de estos perfiles:
+
+   - Apache: este perfil abre solo el puerto `80` (tráfico web normal no cifrado).
+   - Apache Full: este perfil abre los puertos `80` (tráfico web normal no cifrado) y `443` (tráfico TLS/SSL cifrado).
+   - Apache Secure: este perfil abre solo el puerto `443` (tráfico TLS/SSL cifrado).
+
+Por ahora, es mejor permitir conexiones únicamente en el puerto `80`, ya que se trata de una instalación nueva de Apache y todavía no tiene un certificado TLS/SSL configurado para permitir tráfico HTTPS en su servidor.
+
+Para permitir tráfico únicamente en el puerto `80` utilice el perfil `Apache`, pero si queremos usar tanto el puerto `80` como el puerto `443` es necesario usar el perfil `Apache Full`, ten en cuenta que tambien se puede sustituir por  `http (80)` o por `https (443)`, en nuestro caso vamos a utilizar `Apache Full`:
+
 
