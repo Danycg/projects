@@ -188,6 +188,8 @@ La instalación de PhpMyAdmin es, posiblemente, el paso más complejo de todo el
 ```sh
 apt-get install phpmyadmin
 ```
+
+Durante la instalación elige `apache2` con la barra de espacio y luego `ENTER`.
 #### 2. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
 
 Primero de todo debemos de entrar en la base de datos con el usuario `root`
@@ -196,7 +198,22 @@ sudo mysql -u root
 ```
 A continuación cambiamos la contraseña a `P@ssw0rd`, con el siguiente comando:
 ```sh
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd';
+exit;
+sudo systemctl reload apache2
 ```
+
+## Paso 5: Comprobar el acceso a PhpMyAdmin
+
+En el navegador abre la siguiente dirección web en su navegador.
+```sh
+http://<your_vps_ip_adress>/phpmyadmin
+```
+
+En nuestro caso:
+```sh
+http://3.228.8.192/test.php
+```
+El resultado debe ser algo parecido a esta imagen y eso significa que Apache puede procesar ficheros PHP.
 
 
