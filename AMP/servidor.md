@@ -37,4 +37,35 @@ Por ahora, es mejor permitir conexiones únicamente en el puerto `80`, ya que se
 
 Para permitir tráfico únicamente en el puerto `80` utilice el perfil `Apache`, pero si queremos usar tanto el puerto `80` como el puerto `443` es necesario usar el perfil `Apache Full`, ten en cuenta que tambien se puede sustituir por  `http (80)` o por `https (443)`, en nuestro caso vamos a utilizar `Apache Full`:
 
+```sh
+sudo ufw allow "Apache Full"
+```
 
+Puede verificar el cambio con el siguiente comando:
+```sh
+sudo ufw status
+```
+Si nos sale que el error: `Status: inactive`
+
+Eso significa que hay que activar **ufw**.
+
+Para activar **ufw**, vamos a ejecutar el siguiente comando:
+```sh
+sudo ufw enable
+```
+Nos indicará que va a eliminar (disrupt) el puerto `ssh`.
+
+Vamos a confirmar con `y`.
+
+Al ejecutar de nuevo el comando:
+```sh 
+sudo ufw status
+```
+Ahora si vemos cual es el estado.
+![Salida ufw](./img/ufw_status.png)
+
+Para que en el futuro no tengamos problemas con el acceso remoto al equipo vamos a activar el puerto `22 (Open SSH)`
+
+Ahora, se permite tráfico en el puerto 80 a través del firewall.
+
+Puede realizar una verificación rápida para comprobar que todo se haya realizado según lo previsto dirigiéndose a la dirección IP pública de su servidor en su navegador web (consulte la nota de la siguiente sección para saber cuál es su dirección IP pública si no dispone de esta información):
