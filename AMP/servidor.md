@@ -174,5 +174,29 @@ En nuestro caso:
 ```sh
 http://3.228.8.192/test.php
 ```
+El resultado debe ser algo parecido a esta imagen y eso significa que Apache puede procesar ficheros PHP.
+
+![Librerias php](./img/php.png)
+
+
+## Paso 4: Cómo instalar PhpMyAdmin
+
+Procederemos a la instalación de PhpMyAdmin. Se trata de una aplicación web que nos permitirá gestionar nuestras bases de datos directamente desde el navegador, algo que resulta práctico y cómodo.
+
+La instalación de PhpMyAdmin es, posiblemente, el paso más complejo de todo el manual, ya que requiere de la intervención del usuario. Por favor, lee atentamente los pasos que detallaremos a continuación:
+#### 1. Inicia la instalación
+```sh
+apt-get install phpmyadmin
+```
+#### 2. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
+
+Primero de todo debemos de entrar en la base de datos con el usuario `root`
+```sh
+sudo mysql -u root
+```
+A continuación cambiamos la contraseña a `P@ssw0rd`, con el siguiente comando:
+```sh
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+```
 
 
