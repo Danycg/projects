@@ -62,13 +62,15 @@ Al ejecutar de nuevo el comando:
 sudo ufw status
 ```
 Ahora si vemos cual es el estado.
+
 ![Salida ufw](./img/ufw_status.png)
 
 Para que en el futuro no tengamos problemas con el acceso remoto al equipo vamos a activar el puerto `22 (Open SSH)`, para ello vamos a ejecutar los siguientes comandos y luego veremos el estado.
 ```sh
 sudo ufw allow openssh
 ```
-La salida ahora sería:nu
+La salida ahora sería:
+
 ![Ufw completo](./img/ufw_status_full.png)
 
 Ahora, se permite tráfico en el puerto `80` a través del firewall.
@@ -83,8 +85,11 @@ Para ello vamos a ir a AWS y comprobar por una parte la configuración de seguri
 ## Revisar configuración en AWS
 Las reglas de configuración de seguridad de entrada, deben de ser la siguientes:
 #### Reglas de seguridad de entrada
+
 ![Ufw completo](./img/grupo_seg_entrada.png)
+
 ### Ip pública
+
 ![Ufw completo](./img/ip_publica.png)
 
 En este caso la ip pública es: **3.228.8.192**, con lo que si ejecutamos en el navegador de nuestro PC lo siguiente:
@@ -113,7 +118,7 @@ Se le preguntará si desea configurar el `VALIDATE PASSWORD PLUGIN`.
 
 Elije `Y` para indicar que sí, o cualquier otra cosa para continuar sin la habilitación.
 
-Si responde “sí”, se le solicitará que seleccione un nivel de validación de contraseña. Tenga en cuenta que, si ingresa `2` para indicar el nivel más seguro, recibirá mensajes de error al intentar establecer cualquier contraseña que no contenga números, letras en mayúscula y minúscula, y caracteres especiales, o que se base en palabras comunes del diccionario.
+Si responde “sí”, se le solicitará que seleccione un nivel de validación de contraseña. Tenga en cuenta que, si ingresa `2` para indicar el nivel más seguro, recibirá mensajes de error al intentar establecer cualquier contraseña que no contenga números, letras en mayúscula y minúscula, y caracteres especiales, o que se base en palabras comunes del diccionario. Por ello es recomendable en este caso responder `no`.
 
 Para el resto de las preguntas, presione `Y` y `ENTER` en cada mensaje. Con esto, se eliminarán algunos usuarios anónimos y la base de datos de prueba, se deshabilitarán las credenciales de inicio de sesión remoto de root y se cargarán estas nuevas reglas para que MySQL aplique de inmediato los cambios que realizó.
 
@@ -165,7 +170,7 @@ Además, necesita privilegios de root para poder escribir en este directorio. He
 phpinfo();
 ?>
 ```
-Después de ingresar este texto presione Ctrl + X (o CMD + X si está en Mac), y luego Y, y luego presione ENTER. Esto guardará el archivo y saldrá del editor. Ahora abra la siguiente dirección web en su navegador
+Después de ingresar este texto presione Ctrl + X (o CMD + X si está en Mac), y luego `Y`, y luego presione ENTER. Esto guardará el archivo y saldrá del editor. Ahora abra la siguiente dirección web en su navegador
 ```sh
 http://<your_vps_ip_adress>/test.php
 ```
@@ -186,10 +191,9 @@ Procederemos a la instalación de PhpMyAdmin. Se trata de una aplicación web qu
 La instalación de PhpMyAdmin es, posiblemente, el paso más complejo de todo el manual, ya que requiere de la intervención del usuario. Por favor, lee atentamente los pasos que detallaremos a continuación:
 #### 1. Inicia la instalación
 ```sh
-apt-get install phpmyadmin
+sudo apt install phpmyadmin php-mbstring
 ```
 
-Durante la instalación elige `apache2` con la barra de espacio y luego `ENTER`.
 #### 2. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
 
 Primero de todo debemos de entrar en la base de datos con el usuario `root`
@@ -203,6 +207,8 @@ exit;
 sudo systemctl reload apache2
 ```
 
+A partir de ahora nuestro usuario / contraseña para entrar en mysql será: root / P@ssw0rd
+
 ## Paso 5: Comprobar el acceso a PhpMyAdmin
 
 En el navegador abre la siguiente dirección web en su navegador.
@@ -212,8 +218,9 @@ http://<your_vps_ip_adress>/phpmyadmin
 
 En nuestro caso:
 ```sh
-http://3.228.8.192/test.php
+http://3.228.8.192/phpmyadmin.php
 ```
 El resultado debe ser algo parecido a esta imagen y eso significa que Apache puede procesar ficheros PHP.
 
+![mysql](./img/phpmyadminuser.png)
 
