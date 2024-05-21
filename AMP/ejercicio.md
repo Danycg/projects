@@ -18,3 +18,11 @@ El fichero php, se debe de llamar: `hola.php`
 #### Tienes que entregar
 1. Captura de pantalla del navegador, que incluya la IP
 2. Código empleado.
+
+## 3. Crea una base de datos con datos
+
+Crea una base de datos con al menos 2 tablas y con registros dentro de las tablas.
+
+#### Tienes que entregar
+1. Captura de pantalla del navegador, que incluya la base de datos
+2. Resultado de 2 selects sobre diferentes tablas.

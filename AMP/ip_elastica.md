@@ -31,7 +31,7 @@ En el panel izquierdo de `EC2`, en el apartado `Red y seguridad` tenemos la opci
 
 ![elastica](./elastica/asociada.png)
 
-5. Una vez asociada, a partir ahora nuestra instacia siempre tendrá asociada en este caso la IP `100.28.49.121` y si la ponemos en el navegador, debería funcionar nuestro servidor web u otro servidio que tengamos en nuestra máquina.
+6. Una vez asociada, a partir ahora nuestra instacia siempre tendrá asociada en este caso la IP `100.28.49.121` y si la ponemos en el navegador, debería funcionar nuestro servidor web u otro servidio que tengamos en nuestra máquina.
 
 ![elastica](./elastica/ip_fija.png)
 
