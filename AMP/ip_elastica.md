@@ -36,3 +36,6 @@ En el panel izquierdo de `EC2`, en el apartado `Red y seguridad` tenemos la opci
 ![elastica](./elastica/ip_fija.png)
 
 > IMPORTANTE: Ten en cuenta que la IP elástica ***consume mucho saldo*** de nuestra cuenta.
+Así que sólo es para probar que funciona
+
+> Ahora puedes asociar un dominio a tú `IP elástica`.
