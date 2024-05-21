@@ -6,7 +6,7 @@ Sustituye la página index.html, que se encuentra en el directorio: /var/www/htm
 #### Tienes que entregar
 1. Una captura parecida a la mostrada aquí abajo.
 
-![bienvenida](./img/bienvenida.png)
+![](./img/bienvenida.png)
 
 Ten en cuenta, que debe de contener la ***IP pública*** que se vee en la barra de direcciones, además de tu nombre y apellidos completos.
 
@@ -26,3 +26,9 @@ Crea una base de datos con al menos 2 tablas y con registros dentro de las tabla
 #### Tienes que entregar
 1. Captura de pantalla del navegador, que incluya la base de datos
 2. Resultado de 2 selects sobre diferentes tablas.
+
+**Algo parecido a estas imágenes, pero con tu IP pública visible**
+
+![](./img/bd.png)
+
+![](./img/sql.png)

@@ -25,7 +25,8 @@ sudo ufw app list
 
 Verá un resultado como este:
 
-![Salida ufw](./img/ufw.png)
+![](./img/ufw.png)
+ 
 
 A continuación, explicamos cada uno de estos perfiles:
 
@@ -63,7 +64,7 @@ sudo ufw status
 ```
 Ahora si vemos cual es el estado.
 
-![Salida ufw](./img/ufw_status.png)
+![](./img/ufw_status.png)
 
 Para que en el futuro no tengamos problemas con el acceso remoto al equipo vamos a activar el puerto `22 (Open SSH)`, para ello vamos a ejecutar los siguientes comandos y luego veremos el estado.
 ```sh
@@ -71,7 +72,7 @@ sudo ufw allow openssh
 ```
 La salida ahora sería:
 
-![Ufw completo](./img/ufw_status_full.png)
+![](./img/ufw_status_full.png)
 
 Ahora, se permite tráfico en el puerto `80` a través del firewall.
 
@@ -86,11 +87,11 @@ Para ello vamos a ir a AWS y comprobar por una parte la configuración de seguri
 Las reglas de configuración de seguridad de entrada, deben de ser la siguientes:
 #### Reglas de seguridad de entrada
 
-![Ufw completo](./img/grupo_seg_entrada.png)
-
+![ ](./img/grupo_seg_entrada.png)
+\ 
 ### Ip pública
 
-![Ufw completo](./img/ip_publica.png)
+![ ](./img/ip_publica.png)
 
 En este caso la ip pública es: **3.228.8.192**, con lo que si ejecutamos en el navegador de nuestro PC lo siguiente:
 ```sh
@@ -98,7 +99,7 @@ http://3.228.8.192
 ```
 Nos debe aparecer la página inicial de nuestro servidor.
 
-![Ufw completo](./img/default_page.png)
+![](./img/default_page.png)
 
 ## Paso 2: Instalar MySQL
 Ahora que dispone de un servidor web funcional, deberá instalar un sistema de base de datos para poder almacenar y gestionar los datos de su sitio. MySQL es un sistema de administración de bases de datos popular que se utiliza en entornos PHP.
@@ -128,7 +129,7 @@ sudo mysql
 ```
 Esto permitirá establecer conexión con el servidor de MySQL como root user de la base de datos administrativa, lo que se infiere del uso de sudo cuando se ejecuta este comando. Debería ver el siguiente resultado:
 
-![mysql](./img/mysql.png)
+![](./img/mysql.png)
 
 Para salir escribir:
 ```sh
@@ -181,7 +182,7 @@ http://3.228.8.192/test.php
 ```
 El resultado debe ser algo parecido a esta imagen y eso significa que Apache puede procesar ficheros PHP.
 
-![Librerias php](./img/php.png)
+![ ](./img/php.png)
 
 
 ## Paso 4: Cómo instalar PhpMyAdmin
@@ -222,5 +223,5 @@ http://3.228.8.192/phpmyadmin.php
 ```
 El resultado debe ser algo parecido a esta imagen y eso significa que Apache puede procesar ficheros PHP.
 
-![mysql](./img/phpmyadminuser.png)
+![](./img/phpmyadminuser.png)
 
