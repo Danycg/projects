@@ -203,7 +203,11 @@ Cólocaté encima de `Ok` y pulsa `ENTER` para continuar.
 
 ![](./img/motor_mysql.png)
 
-#### 3. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
+#### 3. No configurar phpmyadmin
+En este punto no vamos a configurar la contraseña de mysql a traves de phpmyadmin, lo haremos de forma manual en el siguiente punto, así que en este apartado vamos a decir que `No`y pulsar `ENTER` para continuar.
+![](./img/phpmyadminopassword.png)
+
+#### 4. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
 
 Primero de todo debemos de entrar en la base de datos con el usuario `root`
 ```sh
@@ -213,6 +217,9 @@ A continuación cambiamos la contraseña a `P@ssw0rd`, con el siguiente comando:
 ```sh
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'P@ssw0rd';
 exit;
+```
+Tenemos que reiniciar el motor de **Apache**, para que cargue toda la nueva configuración.
+```sh
 sudo systemctl reload apache2
 ```
 
