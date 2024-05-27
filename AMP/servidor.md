@@ -195,7 +195,15 @@ La instalación de PhpMyAdmin es, posiblemente, el paso más complejo de todo el
 sudo apt install phpmyadmin php-mbstring
 ```
 
-#### 2. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
+#### 2. Elegir el motor de base de datos
+En este punto nos pide elegir el motor de base de datos que va a usar phpmyadmin.
+En nuestro caso va a ser `mysql`,se elige con la barra espaciadora.
+Te puede mover con las flechas de dirección del teclado y el tabulador.
+Cólocaté encima de `Ok` y pulsa `ENTER` para continuar.
+
+![](./img/motor_mysql.png)
+
+#### 3. Crear contraseña para el usurio root y poder acceder a la BD des phpmyadmin
 
 Primero de todo debemos de entrar en la base de datos con el usuario `root`
 ```sh
