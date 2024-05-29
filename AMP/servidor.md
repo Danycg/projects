@@ -196,8 +196,8 @@ sudo apt install phpmyadmin php-mbstring
 ```
 
 #### 2. Elegir el motor de base de datos
-En este punto nos pide elegir el motor de base de datos que va a usar phpmyadmin.
-En nuestro caso va a ser `mysql`,se elige con la barra espaciadora.
+En este punto nos pide elegir el motor web que va a usar phpmyadmin.
+En nuestro caso va a ser `apache2`,se elige con la barra espaciadora.
 Te puede mover con las flechas de dirección del teclado y el tabulador.
 Cólocaté encima de `Ok` y pulsa `ENTER` para continuar.
 
