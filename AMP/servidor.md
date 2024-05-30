@@ -195,7 +195,7 @@ La instalación de PhpMyAdmin es, posiblemente, el paso más complejo de todo el
 sudo apt install phpmyadmin php-mbstring
 ```
 
-#### 2. Elegir el motor de base de datos
+#### 2. Elegir el motor web
 En este punto nos pide elegir el motor web que va a usar phpmyadmin.
 En nuestro caso va a ser `apache2`,se elige con la barra espaciadora.
 Te puede mover con las flechas de dirección del teclado y el tabulador.
