@@ -89,7 +89,15 @@ Nos mostrará el siguiente panel.
 
  Una de las acciones es `Conectar a la VPC`, pulsamos esa opción, para unir la puerta de enlace (gateway) de internet con la **VPC** que hemos creado en el punto anterior.
 
- 
+![](./assets/gateway_vpc.png)
+
+En este paso, sólo tenemos que seleccionar la `VPC` y pulsar `Conectar gateway de Internet`.
+
+Aquí puedes ver como la configuración completa del gateway.
+
+![](./assets/gateway_finail.png)
+
+
 
 
 
