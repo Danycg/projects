@@ -44,4 +44,8 @@ Las siguientes funciones lo ayudan a configurar una VPC para proporcionar la con
     Conecte sus VPC a las redes en las instalaciones mediante AWS Virtual Private Network (AWS VPN).
 
 ## Pasos
-Vamos a crear un VPC simple y adaptada
+Vamos a crear un VPC con dos subredes.
+Para ello vamos a seguir los siguientes pasos:
+### Crear la VPC
+En todos los laboratorios hay una VPC creada por defecto, nosotros vamos a crear una personalizada.
+Dentro del laboratorio buscamos la palabra **VPC**, para que nos salga el panel con todas las opciones.
