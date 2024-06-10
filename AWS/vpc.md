@@ -5,7 +5,9 @@ Para ello vamos a empezar a entender que es un VPC (segun AWS):
 Con Amazon Virtual Private Cloud (Amazon VPC), puede lanzar recursos de AWS en una red virtual aislada de manera lógica que haya definido. Esta red virtual es muy similar a la red tradicional que usaría en su propio centro de datos, pero con los beneficios que supone utilizar la infraestructura escalable de AWS.
 
 En el siguiente diagrama se muestra una VPC de ejemplo. La VPC tiene una subred en cada zona de disponibilidad de la región, instancias de EC2 en cada subred y una puerta de enlace de Internet para permitir la comunicación entre los recursos en su VPC y la Internet.
+
 ![](./assets/aws_vpc.png)
+
 ### Características
 
 Las siguientes funciones lo ayudan a configurar una VPC para proporcionar la conectividad que necesitan sus aplicaciones:
@@ -42,3 +44,4 @@ Las siguientes funciones lo ayudan a configurar una VPC para proporcionar la con
     Conecte sus VPC a las redes en las instalaciones mediante AWS Virtual Private Network (AWS VPN).
 
 ## Pasos
+Vamos a crear un VPC simple y adaptada
