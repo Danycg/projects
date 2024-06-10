@@ -48,4 +48,36 @@ Vamos a crear un VPC con dos subredes.
 Para ello vamos a seguir los siguientes pasos:
 ### Crear la VPC
 En todos los laboratorios hay una VPC creada por defecto, nosotros vamos a crear una personalizada.
+
 Dentro del laboratorio buscamos la palabra **VPC**, para que nos salga el panel con todas las opciones.
+
+![](./assets/vpc_panel.png)
+
+Pulsamos en la esquina superior la opción: `Crear VPC`.
+
+![](./assets/vpc_crear.png)
+
+En esta opción, seleccionamos:
+- Solo la VPC
+- Le damos un nombre en nuestro caso `2N
+- Seleccionamos un bloque de IP's, en mi caso he elegido el de: 192.168.10.0/24
+- Ir hasta el final y pulsar `Crear VPC`
+
+Veremos un resumen de la VPC que acabamos de crear, junto con el mensaje de que se ha creado con éxito.
+
+![](./assets/vpc_creada.png)
+
+### Crear el gateway
+
+Como hemos podido observar en la primera imagen necesitamos un gateway (puerta de enlace) con internet.
+
+Para ello en nuestro panel de VPC de la izquierda elegimos: `Puertas de enlace de internet`.
+
+Una vez abierto el panel pulsamos `Crear gateway de Internet` arriba a la derecha.
+ 
+ ![](./assets/gateway_crear.png)
+
+ En este panel completamos simplemente el nombre, en nuestro caso `2N-GATEWAY` y pulsamos el botón de  `Crear gateway de internet`.
+
+
+
