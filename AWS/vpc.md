@@ -129,6 +129,34 @@ Repetir estos pasos para las subredes: `2N-B`, `2N-C` y `2N-D`.
 
 ![](./assets/subred_creada.png)
 
+### Tabla de enrutamiento
+
+Sólo nos queda configurar la tabla de enrutamiento para permitir el tráfico de internet hacia nuestra red interna.
+
+En las opciones de la izquierda seleccionamos `Tablas de enrutamiento`.  
+Vemos que se ha creado una entrada.
+
+![](./assets/enruta_lista.png)
+
+Pulsamos sobre el `ID de la tabla de enrutamiento` y pasamos a agregar reglas de direccionamiento.
+
+> [!TIP]
+> En nuestro caso hay que añadir `0.0.0.0/0` a nuestro gateway
+
+> [!NOTE]
+> Information the user should notice even if skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]
+> Essential information required for user success.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+> [!WARNING]
+> Dangerous certain consequences of an action.
 
 
 
