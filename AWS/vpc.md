@@ -74,10 +74,22 @@ Como hemos podido observar en la primera imagen necesitamos un gateway (puerta d
 Para ello en nuestro panel de VPC de la izquierda elegimos: `Puertas de enlace de internet`.
 
 Una vez abierto el panel pulsamos `Crear gateway de Internet` arriba a la derecha.
+
+Nos mostrará el siguiente panel.
  
  ![](./assets/gateway_crear.png)
 
  En este panel completamos simplemente el nombre, en nuestro caso `2N-GATEWAY` y pulsamos el botón de  `Crear gateway de internet`.
+
+ Una vez creada el `gateway` nos saldrá el siguiente panel.
+
+ ![](./assets/gateway_creado.png)
+
+ En este panel, arriba a la derecha, tenemos un botón de `Acciones`. 
+
+ Una de las acciones es `Conectar a la VPC`, pulsamos esa opción, para unir la puerta de enlace (gateway) de internet con la **VPC** que hemos creado en el punto anterior.
+
+ 
 
 
 
