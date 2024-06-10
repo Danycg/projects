@@ -113,6 +113,25 @@ Como seguimos dentro del `Panel de VPC` elegimos la opción de `Subredes` de ent
 
 En el nuevo panel, seleccionamos arriba a la derecha `Crear subred`.
 
+![](./assets/subred_crear.png)
+
+Aquí elegimos nuestro **VPC** y pulsamos `Crear subred`.
+
+Se abre nuevos campos.
+
+![](./assets/subred_crear2.png)
+
+Aquí simplemente le damos un nombre a nuestra `subred` y configuramos la subred, según la tabla anterior.
+
+Repetir estos pasos para las subredes: `2N-B`, `2N-C` y `2N-D`.
+
+> Al terminar, deberiamos tener nuestras 4 subredes definidas.
+
+![](./assets/subred_creada.png)
+
+
+
+
 
 
 
