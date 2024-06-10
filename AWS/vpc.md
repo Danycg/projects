@@ -44,8 +44,11 @@ Las siguientes funciones lo ayudan a configurar una VPC para proporcionar la con
     Conecte sus VPC a las redes en las instalaciones mediante AWS Virtual Private Network (AWS VPN).
 
 ## Pasos
+
 Vamos a crear un VPC con dos subredes.
+
 Para ello vamos a seguir los siguientes pasos:
+
 ### Crear la VPC
 En todos los laboratorios hay una VPC creada por defecto, nosotros vamos a crear una personalizada.
 
@@ -140,11 +143,12 @@ Vemos que se ha creado una entrada.
 
 Pulsamos sobre el `ID de la tabla de enrutamiento` y pasamos a agregar reglas de direccionamiento.
 
-> [!NOTE]
 > En nuestro caso hay que añadir `0.0.0.0/0` a nuestro gateway `2N-GATEWAY`.  
 
-Vamos a ello.  
+Vamos a ello.
+
 A la derecha-abajo tenemos la opción de `Editar rutas`, pulsamos sobre ella y ahora pulsamos sobre `Agregar ruta`.  
+
 Esto nos abrirá una nueva entrada para completar.
 
 ![](./assets/enruta_crea.png)
