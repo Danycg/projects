@@ -97,6 +97,23 @@ Aquí puedes ver como la configuración completa del gateway.
 
 ![](./assets/gateway_finail.png)
 
+### Crear subredes
+
+En este punto vamos a crear las subredes que van a utilizar los servicios de AWS dentro de nuestra VPC.
+
+Nosotros vamos a crear cuatro subredes a partir de nuestra `192.168.10.0/24`.
+
+Las subredes van a ser las siguientes:
+- 192.168.10.0/26 (2N-A)
+- 192.168.10.64/26 (2N-B)
+- 192.168.10.128/26 (2N-C)
+- 192.168.10.192/26 (2N-D)
+
+Como seguimos dentro del `Panel de VPC` elegimos la opción de `Subredes` de entre las opciones de la izquierda.
+
+En el nuevo panel, seleccionamos arriba a la derecha `Crear subred`.
+
+
 
 
 
