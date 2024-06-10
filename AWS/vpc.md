@@ -140,28 +140,22 @@ Vemos que se ha creado una entrada.
 
 Pulsamos sobre el `ID de la tabla de enrutamiento` y pasamos a agregar reglas de direccionamiento.
 
-> [!TIP]
-> En nuestro caso hay que añadir `0.0.0.0/0` a nuestro gateway
-
 > [!NOTE]
-> Information the user should notice even if skimming.
+> En nuestro caso hay que añadir `0.0.0.0/0` a nuestro gateway `2N-GATEWAY`.  
 
-> [!TIP]
-> Optional information to help a user be more successful.
+Vamos a ello.  
+A la derecha-abajo tenemos la opción de `Editar rutas`, pulsamos sobre ella y ahora pulsamos sobre `Agregar ruta`.  
+Esto nos abrirá una nueva entrada para completar.
 
-> [!IMPORTANT]
-> Essential information required for user success.
+![](./assets/enruta_crea.png)
 
-> [!CAUTION]
-> Negative potential consequences of an action.
+Como podemos ver completamos los campos resaltados y pulsamos `Guardar cambios`.
 
-> [!WARNING]
-> Dangerous certain consequences of an action.
+Ahora tenemos la siguiente imagen.
 
+![](./assets/enruta_creado.png)
 
+En la que podemos ver nuestra nueva regla.
 
-
-
-
-
+# Fin
 
