@@ -161,5 +161,15 @@ Ahora tenemos la siguiente imagen.
 
 En la que podemos ver nuestra nueva regla.
 
-# Fin
+
+## Resumen
+
+Si pulsamos sobre la `VPC` creada, nos saldrá un resumen como el que se muestra a continuación.
+
+![](./assets/vpc_completa.png)
+
+En la parte inferior, se puede ver un mapa de las conexiones.
+
+**Nos falta simplemente modificar el DNS**
+
 
