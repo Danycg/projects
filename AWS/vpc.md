@@ -118,13 +118,13 @@ En el nuevo panel, seleccionamos arriba a la derecha `Crear subred`.
 
 ![](./assets/subred_crear.png)
 
-Aquí elegimos nuestro **VPC** y pulsamos `Crear subred`.
+Aquí elegimos nuestra **VPC** y pulsamos `Crear subred`.
 
 Se abre nuevos campos.
 
 ![](./assets/subred_crear2.png)
 
-Aquí simplemente le damos un nombre a nuestra `subred` y configuramos la subred, según la tabla anterior.
+Aquí simplemente le damos un nombre a nuestra `subred`, elegimos una `Zona de disponibilidad` y configuramos la subred, según la tabla anterior.
 
 Repetir estos pasos para las subredes: `2N-B`, `2N-C` y `2N-D`.
 
@@ -170,6 +170,6 @@ Si pulsamos sobre la `VPC` creada, nos saldrá un resumen como el que se muestra
 
 En la parte inferior, se puede ver un mapa de las conexiones.
 
-**Nos falta simplemente modificar el DNS**
+
 
 
