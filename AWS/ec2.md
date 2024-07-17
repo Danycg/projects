@@ -98,7 +98,19 @@ Luego a continuación, vemos que  aparece por defecto la regla para el acceso po
 Aquí vemos un ejemplo de una nueva regla para dar acceso a la máquina a través del protocolo `HTTP`. 
 
 
+### 6.- Almacenamiento
+En este apartado vamos a configurar el almacenamiento.
+**Advertencia:** No es conveniento poner un espacio de almacenamiento que no tenga sentido, ya que en ese caso Amazon aumentará la facturación aunque no se se use ese espacio.
 
+Como se puede ver nos dán 8 GB para una máquina Linux, se puede poner si se quiere 15 GB sin problemas, pero no aconsejo poner 100GB por ejemplo.
 
-## Windows
-## Linux
+En mi caso he puesto 15GB para poder crear un servidor web y un par de bases de datos.
+
+### 7.- Lanzar la instancia.
+
+![](./assets/ec2_vpc_fin.png)
+
+En la parte superior derecha, se puede seleccionar el número de instancias / máquinas que se pueden crear con esta configuración en nuestro caso es suficiente con `una`.
+En la parte inferior derececha, está el botón de `Lanzar instancia` que creará nuestra instancia / máquina.
+
+Con esta paso finalizamos está parte del manual.
