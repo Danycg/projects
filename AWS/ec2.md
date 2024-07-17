@@ -62,6 +62,27 @@ Si tenemos otras VPC's a parte de la VPC por defecto que se genera la crear el l
 
 Cómo se puede ver en la imagen hay una VPC seleccionada, es la VPC por defecto que nos ha generado Amazón y es suficiente para trabajar, pero en nuestro caso, cómo hemos creado una VPC específica, vamos a aprovechar y usarla, para ello elegimos el botón `Editar` que está al principio del bloque a la derecha.
 
+![](./assets/ec2_vpc_selec.png)
+
+Aparecen como se puede ver todas las VPC's a aparte de la VPC prederteminada.
+
+En nuestro caso seleccionamos la que hemos creado con la etiqueta `2N`.
+
+#### 2.- Seleccionar la subred
+Al seleccionar nuestra VPC hay que seleccionar la `subred` dentro de la cual va a estar nuestra máquina.
+
+![](./assets/ec2_vpc_subred.png)
+
+Dentro de la lista de `subredes` que hemos creado en otro paso, seleccionamos la que queremos. En nuestro caso vamos a seleccionar la subred `2N-A`, pero cada uno eligirá la que crea conveniente según su caso.
+
+#### 3.- IP pública
+Es importante **Habilitar** la asignación de una IP pública, para poder acceder a la máquina desde el exterior, si no habilitais esta opción no se podrá acceder a la máquina desde el exterior.
+Si lo dejamos en **Desactivar**, sólo podremos acceder a la máquina a través de otra máquina que sí tengas acceso al exterior, puede ser una medida de seguridad y una opción a valorar.
+Nosotros en nuestro caso dejamos la opción en `Habilitar`.
+
+![](./assets/ec2_vpc_ip.png)
+
+
 
 
 
