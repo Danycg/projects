@@ -22,11 +22,23 @@ Para mostrarnos el panel para la creación de maquinas virtuales.
 ### 2.- Elección de sistema operativo.
 En la ventana para elegir el sistems operativo, primero de todo, hay que darle un nombre a nuestra máquina, no es obligatorio, pero sí recomendable si vamos a tener más de una máquina virtual en nuestras instancias, para distinguirlas.
 En nuestro caso vamos a seleccionar una máquina tipo `Ubuntu Server` y le vamos a poner de nombre `Linux` (nombre original).
+
 ![](./assets/ec2_nombre_so.png)
 
 ### 3.- Tipos de instancia
 Una vez seleccionado el sistema operativo, nos toca elegir el tipo de instancias. Es decir, el `hardware` de la máquina, en este caso incluya memoria RAM y CPU. Hay que tener en cuenta que no se puede usar cualquier tipo de instancia, sólo la que nos permite nuestra capa gratuita. 
-Como **recomendación** sugiero utilizar una instancia de tipo: 
- 
+Como **recomendación** sugiero utilizar una instancia de tipo: `t3.` + micro, small, medium, large, ....
+
+![](./assets/ec2_linuxserver.png)
+
+En nuestro caso y para una instancia de `Ubuntu Server` con una instancia de tipo `t3.micro / t3.small` es suficiente, sin embargo para una máquina `Windows Server`, recomiendo una instancia de tipo `t3.medium / t3.large`.
+
+![](./assets/ec2_instancia.png)
+
+### 4.- Par de claves
+
+Ahora nos toca seleccionar un par de claves para cifrar la información.
+Un par de claves, que consta de una clave pública y una clave privada, es un conjunto de credenciales de seguridad que se utiliza para demostrar su identidad cuando se conecta a una instancia de Amazon EC2. En el caso de las instancias de Linux, la clave privada le permite utilizar SSH para conectarse de forma segura a la instancia. Para las instancias de Windows, se requiere la clave privada para descifrar la contraseña del administrador, que después utilizará para conectarse a la instancia.
+
 ## Windows
 ## Linux
