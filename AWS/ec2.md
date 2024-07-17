@@ -22,6 +22,8 @@ Para mostrarnos el panel para la creación de maquinas virtuales.
 ### 2.- Elección de sistema operativo.
 En la ventana para elegir el sistems operativo, primero de todo, hay que darle un nombre a nuestra máquina, no es obligatorio, pero sí recomendable si vamos a tener más de una máquina virtual en nuestras instancias, para distinguirlas.
 En nuestro caso vamos a seleccionar una máquina tipo `Ubuntu Server` y le vamos a poner de nombre `Linux` (nombre original).
+![](./assets/ec2_nombre_so.png)
+
  
 ## Windows
 ## Linux
