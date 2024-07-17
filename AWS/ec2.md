@@ -113,4 +113,18 @@ En mi caso he puesto 15GB para poder crear un servidor web y un par de bases de 
 En la parte superior derecha, se puede seleccionar el número de instancias / máquinas que se pueden crear con esta configuración en nuestro caso es suficiente con `una`.
 En la parte inferior derececha, está el botón de `Lanzar instancia` que creará nuestra instancia / máquina.
 
+![](./assets/ec2_creada_linux.png)
+
+Se puede ver que se ha creado cón éxito la instancia y nos sugiere próximos pasos, entre ellos el conectarse a la instancia.
+
+## Instancia Windows
+Os dejo como ejercicio crear una máqina Windows Server, con las siguientes características:
+- Nombre de la instancia: Windows
+- VPC: 2N
+- Subred: 2N-A
+- IP pública: Habilitar
+- Grupo de seguridad: Usar `Firewall-nuevo`
+- Asignar 15GB de espacio de disco duro
+
+
 Con esta paso finalizamos está parte del manual.
