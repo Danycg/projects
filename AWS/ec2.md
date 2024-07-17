@@ -38,7 +38,32 @@ En nuestro caso y para una instancia de `Ubuntu Server` con una instancia de tip
 ### 4.- Par de claves
 
 Ahora nos toca seleccionar un par de claves para cifrar la información.
-Un par de claves, que consta de una clave pública y una clave privada, es un conjunto de credenciales de seguridad que se utiliza para demostrar su identidad cuando se conecta a una instancia de Amazon EC2. En el caso de las instancias de Linux, la clave privada le permite utilizar SSH para conectarse de forma segura a la instancia. Para las instancias de Windows, se requiere la clave privada para descifrar la contraseña del administrador, que después utilizará para conectarse a la instancia.
+Un par de claves, que consta de una clave pública y una clave privada, es un conjunto de credenciales de seguridad que se utiliza para demostrar tu identidad cuando te conectas a una instancia de Amazon EC2. En el caso de las instancias de Linux, la clave privada te permite utilizar SSH para conectarte de forma segura a la instancia. Para las instancias de Windows, se requiere la clave privada para descifrar la contraseña del administrador, que después utilizarás para conectarte a la instancia.
+
+**IMPORTANTE**
+Se pueden crear una clave personalizada, pero debes de custiodarla muy bien, ya que si pierdes el fichero no podrás entrar a tus máquinas.
+Por eso se recomienda utilizar el par de claves que ofrece Amazón por `defecto`. En este caso ***vockey***.
+
+![](./assets/ec2_par_claves.png)
+
+Para obtener el fichero `.pem` para este par de clave `vockey`, se obtiene de la ventana donde se inicia el laboratorio.
+
+![](./assets/ec2_par_claves_descarga.png)
+
+En el apartado `! Aws Details` aparece abajo la opción de `Download PEM`, que nos permite descargar nuestro fichero `.pem`, con nuestra clave privada. Lo **interesante** es que podemos volver a descargar este fichero desde cualquier ordenador y no hay problema que perdamos el fichero.
+
+### 5.- Configuración de red
+Esta es la parte más importante, ya que vamos a elegir la red en la que va a trabajar nuestras máquinas y también el `grupo de seguridad` para la apertura de puertos necesarios para acceder a nuestra máquina y aplicar la seguridad.
+
+![](./assets/ec2_vpc_inicial.png)
+
+#### 1.- Seleccionar la VPC
+Si tenemos otras VPC's a parte de la VPC por defecto que se genera la crear el laboratorio.
+
+Cómo se puede ver en la imagen hay una VPC seleccionada, es la VPC por defecto que nos ha generado Amazón y es suficiente para trabajar, pero en nuestro caso, cómo hemos creado una VPC específica, vamos a aprovechar y usarla, para ello elegimos el botón `Editar` que está al principio del bloque a la derecha.
+
+
+
 
 ## Windows
 ## Linux
