@@ -24,6 +24,9 @@ En la ventana para elegir el sistems operativo, primero de todo, hay que darle u
 En nuestro caso vamos a seleccionar una máquina tipo `Ubuntu Server` y le vamos a poner de nombre `Linux` (nombre original).
 ![](./assets/ec2_nombre_so.png)
 
+### 3.- Tipos de instancia
+Una vez seleccionado el sistema operativo, nos toca elegir el tipo de instancias. Es decir, el `hardware` de la máquina, en este caso incluya memoria RAM y CPU. Hay que tener en cuenta que no se puede usar cualquier tipo de instancia, sólo la que nos permite nuestra capa gratuita. 
+Como **recomendación** sugiero utilizar una instancia de tipo: 
  
 ## Windows
 ## Linux
