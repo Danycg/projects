@@ -82,6 +82,20 @@ Nosotros en nuestro caso dejamos la opción en `Habilitar`.
 
 ![](./assets/ec2_vpc_ip.png)
 
+#### 4.- Firewall
+En este paso vamos a crear un grupo de seguridad o seleccionar un grupo ya existente.
+
+ ![](./assets/ec2_vpc_firewall.png) 
+
+En nuestro caso vamos a `crear` un grupo de seguridad **nuevo**. Le podemos dejar el nombre por defecto que aparece o se le puede asignar un nombre significativo para nosotros, en nuestro caso:
+Nombre que le vamos a poner `Firewall-nuevo` tener en cuenta que no permite espacios.
+Descripción es obligatoria así que le pondremos `Regla para servidor web`
+
+Luego a continuación, vemos que  aparece por defecto la regla para el acceso por `SSH`. Esta regla permite que podamos acceder a la máquina en remoto.
+
+![](./assets/ec2_vpc_firewall_http.png)
+
+Aquí vemos un ejemplo de una nueva regla para dar acceso a la máquina a través del protocolo `HTTP`. 
 
 
 
