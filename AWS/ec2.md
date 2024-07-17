@@ -119,12 +119,14 @@ Se puede ver que se ha creado cón éxito la instancia y nos sugiere próximos p
 
 ## Instancia Windows
 Os dejo como ejercicio crear una máqina Windows Server, con las siguientes características:
-- Nombre de la instancia: Windows
+- Nombre de la instancia: Windows Server
+- Instancia: t3.large
+- Par de claves: vockey
 - VPC: 2N
 - Subred: 2N-A
 - IP pública: Habilitar
 - Grupo de seguridad: Usar `Firewall-nuevo`
-- Asignar 15GB de espacio de disco duro
+- Asignar 30 GB de espacio de disco duro
 
 
 Con esta paso finalizamos está parte del manual.
