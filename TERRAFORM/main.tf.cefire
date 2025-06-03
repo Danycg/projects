@@ -1,1 +1,200 @@
+# Cefire
+provider "aws" {
+  region = "us-east-1"
+}
 
+resource "aws_vpc" "my_vpc" {
+  cidr_block = "10.0.0.0/16"
+  tags = {
+    Name = "DCG-VPC"
+  }
+}
+
+resource "aws_internet_gateway" "igw" {
+  vpc_id = aws_vpc.my_vpc.id
+  tags = {
+    Name = "DCG-VPC-IGW"
+  }
+}
+
+resource "aws_subnet" "public_subnet" {
+  vpc_id                  = aws_vpc.my_vpc.id
+  cidr_block              = "10.0.100.0/24"
+  availability_zone       = "us-east-1a"
+  map_public_ip_on_launch = true
+  tags = {
+    Name = "DCG-PublicSubnet"
+  }
+}
+
+resource "aws_route_table" "public_rt" {
+  vpc_id = aws_vpc.my_vpc.id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.igw.id
+  }
+  tags = {
+    Name = "DCG-PublicRouteTable"
+  }
+}
+
+resource "aws_route_table_association" "public_assoc" {
+  subnet_id      = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.public_rt.id
+}
+
+resource "aws_security_group" "web_sg" {
+  name        = "WebSG"
+  description = "Allow SSH and HTTP"
+  vpc_id      = aws_vpc.my_vpc.id
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  ingress {
+    from_port   = 3389
+    to_port     = 3389
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "WebSG"
+  }
+}
+
+
+
+resource "aws_instance" "web_server" {
+  ami                         = "ami-0db3480be03d8d01c"
+  instance_type               = "t2.medium"
+  subnet_id                   = aws_subnet.public_subnet.id
+  vpc_security_group_ids      = [aws_security_group.web_sg.id]
+  associate_public_ip_address = true
+  key_name                    = "vockey"
+  private_ip                  = "10.0.100.53"
+  /*  user_data = <<-EOF
+                <powershell>
+              # Cambiar nombre del equipo
+              Rename-Computer -NewName "CERVER" -Force
+
+              # Instalar Google Chrome
+              $ChromeInstaller = "$env:TEMP\\chrome_installer.exe"
+              Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/latest/chrome_installer.exe" -OutFile $ChromeInstaller
+              Start-Process -FilePath $ChromeInstaller -Args "/silent /install" -Wait
+
+              # Instalar rol AD DS
+              Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+
+              # Crear contraseña para modo seguro
+              $SecurePassword = ConvertTo-SecureString "ComplexAbc1234!" -AsPlainText -Force
+
+              # Script post-promoción (crear usuario y añadirlo al grupo)
+              $PostScript = @"
+              \$Password = ConvertTo-SecureString "ComplexAbc1234!" -AsPlainText -Force
+              New-ADUser -Name "admin" -SamAccountName "admin" -AccountPassword \$Password -Enabled \$true -PasswordNeverExpires \$true
+              Add-ADGroupMember -Identity "Domain Admins" -Members "admin", "Administrator"
+              "@
+
+              # Guardar script a disco
+              \$ScriptPath = "C:\\post_promo.ps1"
+              \$PostScript | Out-File -FilePath \$ScriptPath -Encoding ASCII
+
+              # Crear tarea programada que ejecuta el script al iniciar
+              \$Action = New-ScheduledTaskAction -Execute "PowerShell.exe" -Argument "-ExecutionPolicy Bypass -File \$ScriptPath"
+              \$Trigger = New-ScheduledTaskTrigger -AtStartup
+              \$Principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
+              Register-ScheduledTask -TaskName "PostDomainSetup" -Action \$Action -Trigger \$Trigger -Principal \$Principal
+
+              # Promover el servidor a DC
+              Install-ADDSForest `
+                -DomainName "MENTORIA.ELX" `
+                -DomainNetbiosName "MENTORIA" `
+                -SafeModeAdministratorPassword \$SecurePassword `
+                -InstallDNS `
+                -Force
+
+              </powershell>
+              EOF
+
+  */
+  user_data = <<-EOF
+                <powershell>
+              # Cambiar el nombre del equipo a CERVER
+              if ($env: COMPUTERNAME -ne "CERVER") {
+                Rename-Computer -NewName "CERVER" -Force
+                Restart-Computer -Force
+              }
+              
+
+              # Descargar e instalar Google Chrome
+              $ChromeInstaller = "$env:TEMP\\chrome_installer.exe"
+              Invoke-WebRequest -Uri "https://dl.google.com/chrome/install/latest/chrome_installer.exe" -OutFile $ChromeInstaller
+              Start-Process -FilePath $ChromeInstaller -Args "/silent /install" -Wait
+              
+              Import-Module ADDSDeployment
+              Install-ADDSForest `
+                -CreateDnsDelegation:$false `
+                -DatabasePath "C:\Windows\NTDS" `
+                -DomainMode "WinThreshold" `
+                -DomainName "MENTORIA.ELX" `
+                -DomainNetbiosName "MENTORIA" `
+                -ForestMode "WinThreshold" `
+                -InstallDns:$true `
+                -LogPath "C:\Windows\NTDS" `
+                -NoRebootOnCompletion:$false `
+                -SysvolPath "C:\Windows\SYSVOL" `
+                -Force:$true
+
+              # Reiniciar el equipo después de los cambios
+              Restart-Computer -Force
+              </powershell>
+              EOF
+
+  /*
+  user_data = <<-EOF
+                <powershell>
+              # Instalar función de AD DS
+              Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+
+              # Crear contraseña segura para el modo seguro
+              $SecurePassword = ConvertTo-SecureString "ComplexP@ssw0rd!" -AsPlainText -Force
+
+              # Promover el servidor como Controlador de Dominio
+              Install-ADDSForest `
+                -DomainName "MENTORIA.ELX" `
+                -DomainNetbiosName "MENTORIA" `
+                -SafeModeAdministratorPassword $SecurePassword `
+                -InstallDNS `
+                -Force
+
+              # Esperar a que termine la promoción antes de continuar
+              Start-Sleep -Seconds 300
+
+              # Asegurar que el usuario Administrator del dominio sea administrador local
+              Add-LocalGroupMember -Group "Administrators" -Member "MENTORIA\\Administrator"
+              </powershell>
+              EOF
+*/
+  tags = {
+    Name = "MENTORIA-DC"
+  }
+}
